@@ -12,5 +12,10 @@ public class PersonalDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_details);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar4);
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setTitle("Personal Details");
     }
 }
