@@ -69,9 +69,14 @@ public class PersonalDetails extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(b){
-                    isChecked = b;
+                    isChecked = true;
                     dinneraddress.setVisibility(View.GONE);
                     dinnerBtn.setVisibility(View.GONE);
+                }
+                else{
+                    isChecked = false;
+                    dinneraddress.setVisibility(View.VISIBLE);
+                    dinnerBtn.setVisibility(View.VISIBLE);
                 }
             }
         });
