@@ -38,6 +38,7 @@
         android:id="@+id/linearLayout">
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/nameinput"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingBottom="2dp"
@@ -54,6 +55,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/phnoinput"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingBottom="2dp"
@@ -71,6 +73,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
+            android:id="@+id/mailidinput"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingBottom="2dp"
@@ -88,7 +91,7 @@
     </LinearLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/textInputLayout3"
+        android:id="@+id/lunchaddress"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -111,7 +114,7 @@
     </android.support.design.widget.TextInputLayout>
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
@@ -120,10 +123,10 @@
         android:padding="5dp"
         android:text="Same address for dinner"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+        app:layout_constraintTop_toBottomOf="@+id/lunchaddress" />
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/textInputLayout4"
+        android:id="@+id/dinneraddress"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -134,7 +137,7 @@
         android:padding="5dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox2"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1">
 
@@ -172,7 +175,7 @@
         android:padding="5dp"
         android:text=" Or pick a place from map..."
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
+        app:layout_constraintTop_toBottomOf="@+id/dinneraddress" />
 
     <mehdi.sakout.fancybuttons.FancyButton
         android:id="@+id/lunch_button"
