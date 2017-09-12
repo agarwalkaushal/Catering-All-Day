@@ -94,7 +94,7 @@ public class PersonalDetails extends AppCompatActivity {
             valid = true;
         }
 
-        if(!isChecked){
+        if(isChecked){
             if(dinneraddress.getEditText().getText().toString().trim().equals("")){
                 dinneraddress.setError("Can't be empty");
                 valid = false;
@@ -175,9 +175,12 @@ public class PersonalDetails extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(validate()){
+                if(validate() || true){
                     if(!isChecked) {
+                        Toast.makeText(PersonalDetails.this, "test", Toast.LENGTH_SHORT).show();
                         details = new Details(name.getEditText().getText().toString(),phno.getEditText().getText().toString(),mailid.getEditText().getText().toString(),lunchaddress.getEditText().getText().toString(),dinneraddress.getEditText().getText().toString());
+                        Intent intentt = new Intent(PersonalDetails.this,FoodMenu.class);
+                        startActivity(intentt);
                     }
                 }
             }
