@@ -2,10 +2,12 @@ package order.now.cateringallday;
 
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.CheckBox;
@@ -175,10 +177,17 @@ public class PersonalDetails extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.e("Validate is", String.valueOf(validate()));
+                Log.e("Checked is", String.valueOf(isChecked));
                 if(validate()){
-                    if(!isChecked) {
+                    //if(isChecked) {
                         details = new Details(name.getEditText().getText().toString(),phno.getEditText().getText().toString(),mailid.getEditText().getText().toString(),lunchaddress.getEditText().getText().toString(),dinneraddress.getEditText().getText().toString());
-                    }
+                    Toast.makeText(PersonalDetails.this,"Details added succesfully" , Toast.LENGTH_SHORT).show();
+                    Snackbar.make(view, "Details added succesfully", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+                    startActivity(new Intent(PersonalDetails.this, MainActivity.class));
+                        finish();
+                   // }
                 }
             }
         });

@@ -88,8 +88,9 @@ public class signin extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                if(user!=null)
-                Toast.makeText(getApplicationContext(), "HI " + user.getDisplayName().toString(), Toast.LENGTH_SHORT).show();
+                if(user!=null) {
+                    //Toast.makeText(getApplicationContext(), "HI " + user.getDisplayName().toString(), Toast.LENGTH_SHORT).show();
+                }
                 else {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");
@@ -148,7 +149,7 @@ public class signin extends AppCompatActivity {
                         .addOnCompleteListener(signin.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                Toast.makeText(signin.this, "User with Email signed up successfully:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(signin.this, "User signed up successfully:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
                                 progressBar.setVisibility(View.GONE);
                                 // If sign in fails, display a message to the user. If sign in succeeds
                                 // the auth state listener will be notified and logic to handle the
@@ -158,7 +159,7 @@ public class signin extends AppCompatActivity {
                                             Toast.LENGTH_SHORT).show();
                                     Log.e("Error is",task.getException().toString());
                                 } else {
-                                    startActivity(new Intent(signin.this, MainActivity.class));
+                                    startActivity(new Intent(signin.this, PersonalDetails.class));
                                     finish();
                                 }
                             }
@@ -212,7 +213,7 @@ public class signin extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Log.d(TAG, "signInWithCredential:onComplete:" + task.isSuccessful());
-                        startActivity(new Intent(signin.this, MainActivity.class));
+                        startActivity(new Intent(signin.this, PersonalDetails.class));
                         finish();
                         // If sign in fails, display a message to the user. If sign in succeeds
                         // the auth state listener will be notified and logic to handle the
