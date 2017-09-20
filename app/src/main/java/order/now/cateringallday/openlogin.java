@@ -43,6 +43,7 @@ public class openlogin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_openlogin);
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -70,7 +71,9 @@ public class openlogin extends AppCompatActivity {
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressBar.setVisibility(View.VISIBLE);
                 signIn();
+
             }
         });
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -78,7 +81,7 @@ public class openlogin extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if(user!=null)
-                    Toast.makeText(getApplicationContext(), "HI " + user.getDisplayName().toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Hi " + user.getDisplayName().toString(), Toast.LENGTH_SHORT).show();
                 else {
                     // User is signed out
                     Log.d(TAG, "onAuthStateChanged:signed_out");
@@ -105,7 +108,7 @@ public class openlogin extends AppCompatActivity {
 
         inputEmail = (EditText) findViewById(R.id.email);
         inputPassword = (EditText) findViewById(R.id.password);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
         btnSignup = (Button) findViewById(R.id.btn_signup);
         btnLogin = (Button) findViewById(R.id.btn_login);
         btnReset = (Button) findViewById(R.id.btn_reset_password);
@@ -188,6 +191,7 @@ public class openlogin extends AppCompatActivity {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
+                progressBar.setVisibility(View.GONE);
 
             } else {
                 // Google Sign In failed, update UI appropriately

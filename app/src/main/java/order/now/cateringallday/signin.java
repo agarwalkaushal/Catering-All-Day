@@ -82,6 +82,7 @@ public class signin extends AppCompatActivity {
            @Override
            public void onClick(View v) {
                signIn();
+               progressBar.setVisibility(View.VISIBLE);
            }
            });
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -183,6 +184,7 @@ public class signin extends AppCompatActivity {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
+                progressBar.setVisibility(View.GONE);
 
             } else {
                 // Google Sign In failed, update UI appropriately

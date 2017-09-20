@@ -1,5 +1,6 @@
 package order.now.cateringallday;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -82,7 +83,8 @@ public class FoodMenu extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            startActivity(new Intent(FoodMenu.this, MainActivity.class));
+            finish();
         }
 
         return super.onOptionsItemSelected(item);
