@@ -177,7 +177,7 @@ public class PersonalDetails extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(validate() || true){
+                if(validate()){
                     if(!isChecked) {
                         //Toast.makeText(PersonalDetails.this, "test", Toast.LENGTH_SHORT).show();
                         //Snackbar.make(view, "Details added succesfully", Snackbar.LENGTH_LONG).setAction("Action", null).show();
