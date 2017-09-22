@@ -183,8 +183,11 @@ public class PersonalDetails extends AppCompatActivity {
                         //Snackbar.make(view, "Details added succesfully", Snackbar.LENGTH_LONG).setAction("Action", null).show();
                         //startActivity(new Intent(PersonalDetails.this, MainActivity.class));
                         details = new Details(name.getEditText().getText().toString(), phno.getEditText().getText().toString(), mailid.getEditText().getText().toString(), lunchaddress.getEditText().getText().toString(), dinneraddress.getEditText().getText().toString());
-                        Toast.makeText(PersonalDetails.this, "Details added succesfully", Toast.LENGTH_SHORT).show();
+
+                        Log.e("Details entered","yes");
                         Intent intentt = new Intent(PersonalDetails.this, FoodMenu.class);
+                        Log.e("Intent clicked","yes");
+                        Toast.makeText(PersonalDetails.this, "Details added succesfully", Toast.LENGTH_SHORT).show();
                         startActivity(intentt);
                     }
                 }
