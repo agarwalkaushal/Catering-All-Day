@@ -111,7 +111,7 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="60dp"
             android:gravity="top"
             android:hint="Lunch address"
             android:inputType="textPostalAddress" />
@@ -147,7 +147,7 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="60dp"
             android:gravity="top"
             android:hint="Dinner address"
             android:inputType="textPostalAddress" />
