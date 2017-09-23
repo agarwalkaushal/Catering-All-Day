@@ -224,6 +224,10 @@ public void navigateToBaseActivity(View view) {
 
             return true;
         }
+        if(id==R.id.nav_manage){
+            startActivity(new Intent(this, PersonalDetails.class));
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -238,7 +242,7 @@ public void navigateToBaseActivity(View view) {
             navigateToBaseActivity(null);
             return true;
         } else if (id == R.id.nav_manage) {
-
+            startActivity(new Intent(MainActivity.this, PersonalDetails.class));
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_sign) {
