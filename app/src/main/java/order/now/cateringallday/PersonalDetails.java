@@ -197,20 +197,24 @@ public class PersonalDetails extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == LUNCH_PLACE_PICKER_REQUEST) {
-            if (resultCode == RESULT_OK) {
-                Place place = PlacePicker.getPlace(data, this);
-                String lunchAddress = place.getAddress().toString();
-                lunchaddress.getEditText().setText(lunchAddress);
-            }
-        }else if(requestCode == DINNER_PLACE_PICKER_REQUEST){
+        try {
+            if (requestCode == LUNCH_PLACE_PICKER_REQUEST) {
+                if (resultCode == RESULT_OK) {
+                    Place place = PlacePicker.getPlace(data, this);
+                    String lunchAddress = place.getAddress().toString();
+                    lunchaddress.getEditText().setText(lunchAddress);
+                }
+            } else if (requestCode == DINNER_PLACE_PICKER_REQUEST) {
 //            if(requestCode == RESULT_OK){
-            Place place = PlacePicker.getPlace(data, this);
-            String dinnerAddress = place.getAddress().toString();
-            dinneraddress.getEditText().setText(dinnerAddress);
+                Place place = PlacePicker.getPlace(data, this);
+                String dinnerAddress = place.getAddress().toString();
+                dinneraddress.getEditText().setText(dinnerAddress);
 //            }
-        }else{
-            super.onActivityResult(requestCode, resultCode, data);
+            } else {
+                super.onActivityResult(requestCode, resultCode, data);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 }
